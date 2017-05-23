@@ -6,3 +6,184 @@ Colors:
 #75726C;
 #EDE9E2
 */
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1;
+font-family: 'Raleway', Helvetica, Arial, sans-serif;
+background-color: #f9f9f9;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+/* ESTILOS BÁSICOS */
+.container {
+display: block;
+width: 100%;
+max-width: 1100px;
+margin: 0 auto;
+}
+header {
+background-color: #6730EC;
+color: white;
+padding: 10em 0 2em;
+margin-bottom: 5em;
+text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Raleway', Helvetica, Arial, sans-serif;
+font-weight: 800;
+text-align: center;
+}
+h1 {
+font-size: 3rem;
+}
+h2 {
+margin: .5em .5em 1em;
+font-size: 2.5rem;
+}
+h3 {
+color: #6730EC;
+margin: 3em 0 1em;
+font-size: 1.5rem;
+}
+h4 {
+font-size: 1.5rem;
+text-align: left;
+}
+.lead {
+max-width: 660px;
+margin: 2em auto 1em;
+font-size: 120%;
+}
+form {
+width: 90%;
+margin: 0 auto;
+max-width: 600px;
+padding: 0 5%;
+font-size: 85%;
+}
+label {
+display: block;
+font-weight: 800;
+color: #6730EC;
+margin: 1.2em 0 .5em;
+float: left;
+}
+input, select {
+width: 100%;
+border-radius: 3px;
+border: 1px solid #f1f1f1;
+line-height: 120%;
+padding: 1%;
+font-size: 120%;
+transition: .5s ease all;
+background: rgba(255,255,255,.9);
+}
+input::placeholder {
+color: gray;
+}
+.btn {
+display: block;
+text-align: center;
+font-weight: 800;
+cursor: pointer;
+color: #6730EC;
+background-color: transparent;
+letter-spacing: 1px;
+font-size: 90%;
+padding: 1em 1.5em;
+transition: .5s ease all;
+margin: 2em auto 1em;
+border: 1px solid #6730EC;
+width: 100%;
+}
+.btn:hover, .btn:active, .btn:focus {
+background-color: #552cb9;
+transition: .5s ease all;
+color: #fff;
+}
+p {
+font-family: 'Raleway', Helvetica, Arial, sans-serif;
+display: block;
+margin: 1em 0;
+line-height: 1.4;
+text-align: center;
+}
+span {
+border-bottom: 2px #6730EC solid;
+font-weight: 700;
+}
+b {
+font-weight: 800;
+color: #6730EC;
+}
+small {
+font-size: .8rem;
+}
+footer {
+display: block;
+text-align: center;
+width: 100%;
+margin: 5em 0 0;
+padding: 0 0 2em;
+overflow: hidden;
+}
+/*INPUT CHECK*/
+input[type|=check] {
+display: inline-block;
+width: auto;
+}
+label[for|=check] {
+font-family: 'Raleway', Helvetica, Arial, sans-serif;
+font-weight: normal;
+display: inline-block;
+}
+/* INPUT NUMBER SIN FLECHAS */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none; 
+margin: 0; 
+}
+
+/* Especial */

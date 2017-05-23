@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Title</title>
-	<link rel="stylesheet" href="assets/css/main.css">
+	<title>Lyft</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Desarrollo de proyecto final del tercer sprint.">
+	<meta name="author" content="Caterina Da Silva">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
+<header>
+	<div class="container">
+		<img src="assets/img/logo-white.png" alt="Lyft logo">
+		<nav>
+			<ul>
+				<li><a href="#drive" title="Drive">Drive</a></li>
+				<li><a href="#explore" title="Explore">Explore</a></li>
+				<li><a href="#help" title="Help">Help</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<section id="hero">
+	<div class="box">
+		<h3>Turn miles into money</h3>
+		<p>Sign up to drive Lyft</p>
+		<div class="driver-number">
+			<input type="number" name="driver-number" id="driverNumber" value="" tabindex="1" />
+		</div>
+		<div>
+			<button class="btn" id="driver" tabindex="2">Become a driver</button>
+		</div>
+		<small>Already applied? Check the status of your application <a href="#">here</a>.</small>
+		<small>Earn money for inviting friends to drive. <a href="#">Learn more</a>.</small>
+	</div>
+</section>
+<section id="play">
+	<div class="container">
+		<h2>Play with Lyft</h2>
+		<div id="game" class="start">
+			<form action="#" method="post">
+				<div class="coordinate">
+					<input type="number" name="x-coordinate" id="xCoordinate" value="" tabindex="3" />
+				</div>
+				<div class="coordinate">
+					<input type="number" name="y-coordinate" id="yCoordinate" value="" tabindex="4" />
+				</div>
+				<div>
+					<button class="btn" id="play" tabindex="5">Start</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+<footer>
+	<section class="top">
+		<div class="container">
+			<div class="left">
+				<h3>Sprint 3 - Project</h3>
+				<p>Desarrollo de proyecto final del tercer sprint.</p>
+			</div>
+			<div class="right">
+				<h3>Links</h3>
+				<ul>
+					<li><a href="#" title="Link1">Link1</a></li>
+					<li><a href="#" title="Link2">Link2</a></li>
+					<li><a href="#" title="Link3">Link3</a></li>
+					<li><a href="#" title="Link4">Link4</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section class="bottom">
+		<div class="container">
+			<small class="left">&copy; 2017 Lyft & Laboratoria Inc.</small>
+			<small class="right">Desarrollado por Caterina Da Silva</small>
+		</div>
+	</section>
+</footer>
 <body>
-	<script src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
