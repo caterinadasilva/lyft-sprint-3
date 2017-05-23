@@ -40,6 +40,7 @@ body {
 line-height: 1;
 font-family: 'Raleway', Helvetica, Arial, sans-serif;
 background-color: #EDE9E2;
+font-weight: 300;
 }
 ol, ul {
 list-style: none;
@@ -70,6 +71,11 @@ color: white;
 padding: .5em 0;
 text-align: center;
 overflow: hidden;
+position: fixed;
+top: 0;
+display: block;
+z-index: 1;
+width: 100%;
 }
 nav{
 float: right;
@@ -99,6 +105,7 @@ border-top: 1px solid white;
 h1, h2, h3, h4, h5, h6 {
 font-family: 'Raleway', Helvetica, Arial, sans-serif;
 font-weight: 700;
+text-transform: uppercase;
 }
 h1 {
 font-size: 3rem;
@@ -118,8 +125,7 @@ color: #00B2A9;
 transition: .5s ease all;
 }
 a:hover, a:focus, a:active {
-font-weight: 300;
-color: #00B2A9;
+color: #E54E79;
 transition: .5s ease all;
 }
 p {
@@ -129,8 +135,7 @@ margin: 1em 0;
 line-height: 1.4;
 }
 span {
-border-bottom: 2px #6730EC solid;
-font-weight: 700;
+
 }
 b {
 font-weight: 700;
@@ -162,17 +167,17 @@ margin: 1.2em 0 .5em;
 float: left;
 }
 input, select {
-width: 100%;
-border-radius: 3px;
-border: 1px solid #f1f1f1;
+width: 98%;
+border: none;
+border-bottom: 1px solid #75726C;
 line-height: 120%;
-padding: 1%;
-font-size: 120%;
+padding: 3% 1%;
 transition: .5s ease all;
-background: rgba(255,255,255,.9);
+background: none;
 }
 input::placeholder {
-color: gray;
+color: #D1CEC7;
+font-weight: 300;
 }
 .logo {
 background-image: url('../img/logo-white.png');	
@@ -189,24 +194,28 @@ margin: 2em auto 1em;
 font-size: 120%;
 }
 .btn {
-display: block;
+display: inline-block;
 text-align: center;
-font-weight: 700;
 cursor: pointer;
-color: #6730EC;
-background-color: transparent;
+color: white;
+background-color: #E56385;
 letter-spacing: 1px;
 font-size: 90%;
 padding: 1em 1.5em;
 transition: .5s ease all;
-margin: 2em auto 1em;
-border: 1px solid #6730EC;
-width: 100%;
+margin: 2em auto 0;
+border: none;
+text-transform: uppercase;
+font-weight: 300;
+border-radius: 10px;
+font-size: 85%;
+box-shadow: 0 3px 5px rgba(117, 114, 108, 0.5);
+font-family: 'Raleway', Helvetica, Arial, sans-serif;
 }
 .btn:hover, .btn:active, .btn:focus {
-background-color: #552cb9;
+background-color: #E54E79;
 transition: .5s ease all;
-color: #fff;
+box-shadow: 0 5px 5px rgba(117, 114, 108, 0.5);
 }
 /*INPUT CHECK*/
 input[type|=check] {
@@ -227,22 +236,36 @@ margin: 0;
 
 /* Específicos */
 #hero {
-    overflow: hidden;
-    height: 70vh;
-    background-image: url(../img/cropped-Lyft-Promo-Codes-car-1.jpg);
-    background-size: cover;
-    position: relative;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+overflow: hidden;
+height: 100vh;
+background-image: url(../img/cropped-Lyft-Promo-Codes-car-1.jpg);
+background-size: cover;
+position: relative;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center;
 }
 #hero .box {
-    position: absolute;
-    width: 40%;
-    top: 20%;
-    right: 0;
-    background-color: #EDE9E2;
-    padding: 3em;
-    text-align: left;
-
+position: absolute;
+max-width: 500px;
+top: 35vh;
+right: 0;
+background-color: #EDE9E2;
+padding: 3em 3.5em 3em 3em;
+text-align: left;
+width: 100%;
+}
+#hero h3 {
+color: #00B2A9;
+}
+#hero p {
+text-transform: uppercase;
+font-size: 90%;
+color: #75726C;
+}
+#hero .box span {
+display: block;
+font-size: 90%;
+margin-top: 1.5em;
+font-weight: 400;
 }
