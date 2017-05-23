@@ -29,6 +29,7 @@ border: 0;
 font-size: 100%;
 font: inherit;
 vertical-align: baseline;
+box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -38,7 +39,7 @@ display: block;
 body {
 line-height: 1;
 font-family: 'Raleway', Helvetica, Arial, sans-serif;
-background-color: #f9f9f9;
+background-color: #EDE9E2;
 }
 ol, ul {
 list-style: none;
@@ -60,41 +61,91 @@ border-spacing: 0;
 .container {
 display: block;
 width: 100%;
-max-width: 1100px;
+max-width: 960px;
 margin: 0 auto;
 }
 header {
-background-color: #6730EC;
+background-color: #E54E79;
 color: white;
-padding: 10em 0 2em;
-margin-bottom: 5em;
+padding: .5em 0;
 text-align: center;
+overflow: hidden;
+}
+nav{
+float: right;
+clear: right;
+}
+nav ul li {
+display: table;
+height: 45px;
+text-align: right;
+float: left;
+margin: 0 1em;
+}
+nav ul li a {
+vertical-align: middle;
+display: table-cell;
+text-decoration: none;
+color: white;
+border-bottom: 1px solid transparent;
+border-top: 1px solid transparent;
+font-size: 90%;
+}
+nav ul li a:hover, nav ul li a:focus, nav ul li a:active {
+color: white;
+border-bottom: 1px solid white;
+border-top: 1px solid white;
 }
 h1, h2, h3, h4, h5, h6 {
 font-family: 'Raleway', Helvetica, Arial, sans-serif;
-font-weight: 800;
-text-align: center;
+font-weight: 700;
 }
 h1 {
 font-size: 3rem;
 }
 h2 {
-margin: .5em .5em 1em;
 font-size: 2.5rem;
 }
 h3 {
-color: #6730EC;
-margin: 3em 0 1em;
 font-size: 1.5rem;
 }
 h4 {
 font-size: 1.5rem;
-text-align: left;
 }
-.lead {
-max-width: 660px;
-margin: 2em auto 1em;
-font-size: 120%;
+a {
+font-weight: 300;
+color: #00B2A9;
+transition: .5s ease all;
+}
+a:hover, a:focus, a:active {
+font-weight: 300;
+color: #00B2A9;
+transition: .5s ease all;
+}
+p {
+font-family: 'Raleway', Helvetica, Arial, sans-serif;
+display: block;
+margin: 1em 0;
+line-height: 1.4;
+}
+span {
+border-bottom: 2px #6730EC solid;
+font-weight: 700;
+}
+b {
+font-weight: 700;
+color: #6730EC;
+}
+small {
+font-size: .8rem;
+}
+footer {
+display: block;
+text-align: center;
+width: 100%;
+margin: 5em 0 0;
+padding: 0 0 2em;
+overflow: hidden;
 }
 form {
 width: 90%;
@@ -105,7 +156,7 @@ font-size: 85%;
 }
 label {
 display: block;
-font-weight: 800;
+font-weight: 700;
 color: #6730EC;
 margin: 1.2em 0 .5em;
 float: left;
@@ -123,10 +174,24 @@ background: rgba(255,255,255,.9);
 input::placeholder {
 color: gray;
 }
+.logo {
+background-image: url('../img/logo-white.png');	
+float: left;
+width: 60px;
+height: 45px;
+background-size: contain;
+background-repeat: no-repeat;
+clear: left;
+}
+.lead {
+max-width: 660px;
+margin: 2em auto 1em;
+font-size: 120%;
+}
 .btn {
 display: block;
 text-align: center;
-font-weight: 800;
+font-weight: 700;
 cursor: pointer;
 color: #6730EC;
 background-color: transparent;
@@ -142,32 +207,6 @@ width: 100%;
 background-color: #552cb9;
 transition: .5s ease all;
 color: #fff;
-}
-p {
-font-family: 'Raleway', Helvetica, Arial, sans-serif;
-display: block;
-margin: 1em 0;
-line-height: 1.4;
-text-align: center;
-}
-span {
-border-bottom: 2px #6730EC solid;
-font-weight: 700;
-}
-b {
-font-weight: 800;
-color: #6730EC;
-}
-small {
-font-size: .8rem;
-}
-footer {
-display: block;
-text-align: center;
-width: 100%;
-margin: 5em 0 0;
-padding: 0 0 2em;
-overflow: hidden;
 }
 /*INPUT CHECK*/
 input[type|=check] {
@@ -186,4 +225,24 @@ input[type=number]::-webkit-outer-spin-button {
 margin: 0; 
 }
 
-/* Especial */
+/* Específicos */
+#hero {
+    overflow: hidden;
+    height: 70vh;
+    background-image: url(../img/cropped-Lyft-Promo-Codes-car-1.jpg);
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#hero .box {
+    position: absolute;
+    width: 40%;
+    top: 20%;
+    right: 0;
+    background-color: #EDE9E2;
+    padding: 3em;
+    text-align: left;
+
+}
