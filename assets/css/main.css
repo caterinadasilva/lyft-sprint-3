@@ -61,7 +61,7 @@ border-spacing: 0;
 /* ESTILOS BÁSICOS */
 .container {
 display: block;
-width: 100%;
+width: 95%;
 max-width: 960px;
 margin: 0 auto;
 }
@@ -108,13 +108,13 @@ font-weight: 700;
 text-transform: uppercase;
 }
 h1 {
-font-size: 3rem;
+font-size: 3.5rem;
 }
 h2 {
-font-size: 2.5rem;
+font-size: 3rem;
 }
 h3 {
-font-size: 1.5rem;
+font-size: 1.8rem;
 }
 h4 {
 font-size: 1.5rem;
@@ -146,17 +146,12 @@ font-size: .8rem;
 }
 footer {
 display: block;
-text-align: center;
 width: 100%;
-margin: 5em 0 0;
-padding: 0 0 2em;
 overflow: hidden;
+background-color: #75726C; 
+color: #EDE9E2;
 }
 form {
-width: 90%;
-margin: 0 auto;
-max-width: 600px;
-padding: 0 5%;
 font-size: 85%;
 }
 label {
@@ -167,13 +162,16 @@ margin: 1.2em 0 .5em;
 float: left;
 }
 input, select {
-width: 98%;
-border: none;
-border-bottom: 1px solid #75726C;
-line-height: 120%;
-padding: 3% 1%;
-transition: .5s ease all;
-background: none;
+    width: 85%;
+    border: none;
+    border-bottom: 1px solid #75726C;
+    line-height: 130%;
+    padding: 1%;
+    transition: .5s ease all;
+    background: none;
+    display: inline-block;
+    margin-left: 2%;
+    font-size: 120%;
 }
 input::placeholder {
 color: #D1CEC7;
@@ -217,6 +215,12 @@ background-color: #E54E79;
 transition: .5s ease all;
 box-shadow: 0 5px 5px rgba(117, 114, 108, 0.5);
 }
+.aleft {
+	float: left;
+}
+.aright {
+	float: right;
+}
 /*INPUT CHECK*/
 input[type|=check] {
 display: inline-block;
@@ -246,26 +250,104 @@ background-repeat: no-repeat;
 background-position: center;
 }
 #hero .box {
-position: absolute;
-max-width: 500px;
-top: 35vh;
-right: 0;
-background-color: #EDE9E2;
-padding: 3em 3.5em 3em 3em;
-text-align: left;
-width: 100%;
+    position: absolute;
+    max-width: 500px;
+    top: 35vh;
+    right: 0;
+    background-color: #EDE9E2;
+    padding: 4em 3.5em 4em 3em;
+    text-align: left;
+    width: 100%;
 }
 #hero h3 {
 color: #00B2A9;
 }
 #hero p {
-text-transform: uppercase;
-font-size: 90%;
-color: #75726C;
+    text-transform: uppercase;
+    font-size: 90%;
+    color: #75726C;
+    margin: 1.5em 0;
 }
 #hero .box span {
 display: block;
 font-size: 90%;
 margin-top: 1.5em;
 font-weight: 400;
+}
+#hero input {
+    margin: 0;
+}
+#play {
+	background-color: #00B2A9;
+    width: 100%;
+	text-align: center;
+    padding: 5em 0 2em;
+}
+#play h2 {
+    width: 100%;
+    background-color: #EDE9E2;
+    padding: .5em 0;
+    color: #75726C;
+}
+#game {
+    margin: 5em 0 1em;
+    background: #EDE9E2;
+    padding: 4.5em 3em;
+}
+#game .coordinate {
+    width: 48%;
+    position: relative;
+}
+#game .coordinate i.fa {
+	display: inline;
+	font-size: 2rem;
+	color: #75726C;
+}
+#game #start.btn {
+	font-size: 120%;
+	background-color: #00B2A9;
+	width: 100%;
+}
+#game #start.btn:hover {
+	background-color: #008883;
+}
+footer > * {
+	overflow: hidden;
+}
+footer h3 {
+	font-weight: 400;
+    text-transform: none;
+    font-size: 1.5rem;
+}
+footer .top {
+    padding: 2em 0;
+}
+footer .bottom {
+	background-color: #706D68;
+	padding: 1em 0;
+}
+footer .left {
+    float: left;
+    clear: left;
+    display: block;
+    width: 49%;
+}
+footer .right {
+    float: right;
+    clear: right;
+    width: 49%;
+    display: block;
+}
+footer .right > * {
+    margin: 0 0 0 25%;
+}
+footer .bottom .right {
+	text-align: right;
+}
+footer ul li {
+    margin: .5em 0;
+}
+footer a {
+	text-decoration: none;
+	color: #fff;
 }
