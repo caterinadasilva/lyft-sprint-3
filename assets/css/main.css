@@ -137,7 +137,7 @@ line-height: 1.4;
 }
 b {
 font-weight: 700;
-color: #6730EC;
+color: #E54E79;
 }
 small {
 font-size: .8rem;
@@ -316,9 +316,17 @@ footer > * {
 overflow: hidden;
 }
 footer h3 {
-font-weight: 400;
-text-transform: none;
-font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 1rem;
+    line-height: 2rem;
+    margin-left: 30px;
+}
+footer b {
+    font-size: 3rem;
+    text-transform: lowercase;
+    display: block;
+    margin-left: -30px;
 }
 footer .top {
 padding: 2em 0;
