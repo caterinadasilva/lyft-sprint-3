@@ -38,27 +38,65 @@ function game() {
     var yCoordinate = document.getElementById('yCoordinate').value;
     console.log('X Coordinate: ' + xCoordinate);
     console.log('Y Coordinate: ' + yCoordinate);
-    if (document.getElementById('xCoordinate').value == "") {
-      alert('Please, insert a number between 0 and 9 in the X Coordinate.')
+    if (document.getElementById('xCoordinate').value == "" || document.getElementById('xCoordinate').value > 9 ) {
+      alert('Please, insert a number between 0 and 9 in the X Coordinate.');
     } else if (document.getElementById('yCoordinate').value == "" || document.getElementById('yCoordinate').value > 5 ) {
-        alert('Please, insert a number between 0 and 5 in the Y Coordinate.')
+        alert('Please, insert a number between 0 and 5 in the Y Coordinate.');
     } else {
       //Ingreso el auto en la posicion ingresada en los input
       tablero[yCoordinate][xCoordinate] = auto;
-      //Vacío el div con los input
-      document.getElementById("game").innerHTML = "";
-        //Recorro el arreglo para dibujar el tablero
-        for(var i = 0; i<tablero.length; i++){
-          fila = document.createElement("div");
-          fila.classList.add("fila");
-          for(var j = 0; j<tablero[i].length; j++){
-            casilla = document.createElement("div");
-            casilla.innerHTML = tablero[i][j];
-            casilla.classList.add("casilla")
-            fila.appendChild(casilla);
-          }
-          divTablero.appendChild(fila);
-        }
+      crearRecorrido();
       }
     });
+  //Funcionalidad de juego
+  function crearRecorrido() {
+    //Vacío el div con los input
+    document.getElementById("game").innerHTML = "";
+    //Recorro el arreglo para dibujar el tablero
+    for(var i = 0; i<tablero.length; i++){
+      fila = document.createElement("div");
+      fila.classList.add("fila");
+      for(var j = 0; j<tablero[i].length; j++){
+        casilla = document.createElement("div");
+        casilla.innerHTML = tablero[i][j];
+        casilla.classList.add("casilla")
+        fila.appendChild(casilla);
+      }
+      divTablero.appendChild(fila);
+    }
+      var teclas = {
+      UP: 38,
+      DOWN: 40,
+      LEFT: 37,
+      RIGHT: 39
+    };
+    document.addEventListener("keydown", function keyPath(evento) {
+    switch(evento.keyCode) {
+      case teclas.UP:
+        tablero[yCoordinate][xCoordinate] = recorrido;
+        yCoordinate -= yCoordinate;
+        tablero[yCoordinate][xCoordinate] = auto;
+        crearRecorrido();
+      break;
+      case teclas.DOWN:
+        tablero[yCoordinate][xCoordinate] = recorrido;
+        yCoordinate += yCoordinate;
+        tablero[yCoordinate][xCoordinate] = auto;
+        crearRecorrido();
+      break;
+      case teclas.LEFT:
+        tablero[yCoordinate][xCoordinate] = recorrido;
+        xCoordinate -= xCoordinate;
+        tablero[yCoordinate][xCoordinate] = auto;
+        crearRecorrido();
+      break;
+      case teclas.RIGHT:
+        tablero[yCoordinate][xCoordinate] = recorrido;
+        xCoordinate += xCoordinate;
+        tablero[yCoordinate][xCoordinate] = auto;
+        crearRecorrido();
+      break;
+    }
+  });
+  }
 }
