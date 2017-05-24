@@ -82,22 +82,22 @@ float: right;
 clear: right;
 }
 header ul {
-    overflow: hidden;
+overflow: hidden;
 }
 nav ul li {
-    display: table;
-    height: initial;
-    text-align: right;
-    float: left;
+display: table;
+height: initial;
+text-align: right;
+float: left;
 }
 nav ul li a {
-    vertical-align: middle;
-    display: table-cell;
-    text-decoration: none;
-    color: white;
-    font-size: 90%;
-    height: 60px;
-    padding: 0 1em;
+vertical-align: middle;
+display: table-cell;
+text-decoration: none;
+color: white;
+font-size: 90%;
+height: 60px;
+padding: 0 1em;
 }
 nav ul li a:hover, nav ul li a:focus, nav ul li a:active {
 color: white;
@@ -353,19 +353,31 @@ text-decoration: none;
 color: #fff;
 }
 footer .fa {
-    width: 25px;
+width: 25px;
 }
 
 /* GAME */
 
 .casilla{
-  box-sizing: border-box;
-  /*Es mejor con float:left*/
-  display:inline-block;
-  background-color: #75726C;
-  color: whitesmoke;
-  padding: 10px;
-  font-family: sans-serif;
-  width: 10%;
-  text-align: center;
+box-sizing: border-box;
+display:inline-block;
+background-color: #75726C;
+color: #75726C;
+padding: 0;
+font-family: sans-serif;
+width: 60px;
+height: 60px;
+text-align: center;
+vertical-align: text-top;
+}
+.casilla .recorrido {
+	width: 60px;
+	height: 60px;
+	background-color: #E54E79;
+}
+.casilla .recorrido img {
+width: auto;
+height: 100%;
+max-height: 50px;
+margin: 5px;
 }
