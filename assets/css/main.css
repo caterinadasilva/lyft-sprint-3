@@ -305,12 +305,12 @@ display: inline;
 font-size: 2rem;
 color: #75726C;
 }
-#game #start.btn {
+#game #startBtn.btn {
 font-size: 120%;
 background-color: #00B2A9;
 width: 100%;
 }
-#game #start.btn:hover {
+#game #startBtn.btn:hover {
 background-color: #008883;
 }
 footer > * {
@@ -392,4 +392,29 @@ width: auto;
 height: 100%;
 max-height: 50px;
 margin: 5px;
+}
+/* Código original de Ricardo Silva */ 
+#map {
+background: #75726C;
+width: 100%;
+overflow: hidden;
+}
+.cell {
+border: none;
+float: left;
+width: 10%;
+height: 60px;
+}
+.active {
+background-color: #E54E79;
+}
+.robot {
+background-color: #E54E79;
+background-image: url('../img/car.png');
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}
+.clearfix {
+clear: both;
 }

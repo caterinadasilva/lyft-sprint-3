@@ -10,6 +10,167 @@ function validateForm() {
   event.preventDefault();
 }
 
+// Código de Ricardo Silva
+
+function game() {
+  document.getElementById("startBtn").addEventListener("click", function(){
+    event.preventDefault();
+    class Robot {
+    constructor (board_size_x, board_size_y) {
+      this.position_x = 0;
+      this.position_y = 0;
+      this.board_size_x = board_size_x;
+      this.board_size_y = board_size_y
+      
+      this.bread_crumb = [];
+      this.saveBreadCrumb();
+    }
+    moveLeft() {
+      if (this.position_x > 0) {
+        this.position_x -= 1;
+        this.saveBreadCrumb();
+      }
+    }
+    moveRight() {
+      if (this.position_x < this.board_size_x - 1) {
+        this.position_x += 1;
+        this.saveBreadCrumb();
+      }
+    } 
+    moveUp() {
+      if (this.position_y > 0) {
+        this.position_y -= 1;
+        this.saveBreadCrumb();
+      }
+    }
+    moveDown() {
+      if (this.position_y < this.board_size_y - 1) {
+        this.position_y += 1;
+        this.saveBreadCrumb();
+      }
+    }
+    saveBreadCrumb() {
+      this.bread_crumb.push([this.position_x, this.position_y]);
+    }
+    render() {
+      let line = document.getElementsByClassName('line')[this.position_y];
+      let div = line.getElementsByClassName('cell')[this.position_x];
+      div.className += ' robot';
+    }
+    renderBreadCrumb() {
+      for (let i = 0; i < this.bread_crumb.length; i++) {
+          let position = this.bread_crumb[i];
+          let line = document.getElementsByClassName('line')[position[1]];
+          let div = line.getElementsByClassName('cell')[position[0]];
+          div.className += ' active';
+      }
+    }
+    debugPosition() {
+      console.log(this.position_x, this.position_y);
+    }
+  }
+  class Board {
+    constructor(size_x, size_y) {
+      this.model = [];
+      // init board
+      for (var y = 0; y < size_y; y++) {
+          let line = []
+          for (var x = 0; x < size_x; x++) {
+            line.push(0);
+        }
+        this.model.push(line);
+      }
+    }
+    render() {
+      let html_builder = [];
+      let dom_element = document.getElementById('map');
+      for (let y = 0; y < this.model.length; y++) {
+          let line = this.model[y];
+          html_builder.push("<div class='clearfix line' >");
+          for (let x = 0; x < line.length; x++) {
+            html_builder.push("<div class='cell' ></div>");
+        }
+        html_builder.push("</div>");
+      }
+      dom_element.innerHTML = html_builder.join('');
+    }
+  }
+    // solution
+    // 6.2
+    let r = new Robot(10, 10);
+    r.moveRight();
+    r.moveDown();
+    r.moveRight();
+    r.moveDown();
+    r.debugPosition();
+
+    // quiz
+    let board = new Board(10, 10);
+    let robot = new Robot(10, 10);
+    robot.moveRight();
+    robot.moveDown();
+    robot.moveRight();
+    robot.moveDown();
+    board.render();
+    robot.render();
+    robot.renderBreadCrumb();
+
+    // bonus
+    class Game {
+      constructor(board_size_x, board_size_y) {
+        this.board = new Board(board_size_x, board_size_y);
+        this.robot = new Robot(board_size_x, board_size_y);
+        this.initControllers();
+      }
+      render() {
+        this.board.render();
+        this.robot.render();
+        this.robot.renderBreadCrumb();
+      }
+      initControllers() {
+        let map = document.getElementById("map");
+        window.onkeydown = (e) => {
+          switch (e.code) {
+            case "ArrowDown":
+                this.robot.moveDown();
+              break;
+            case "ArrowUp":
+                this.robot.moveUp();
+              break;
+            case "ArrowLeft":
+                this.robot.moveLeft();
+              break;
+            case "ArrowRight":
+                this.robot.moveRight();
+                 break;
+            default:
+                return true;
+          }
+          this.render();
+          return false;
+        }
+      }
+    }
+    console.log('X Coordinate: ' + xCoordinate);
+    console.log('Y Coordinate: ' + yCoordinate);
+    if (document.getElementById('xCoordinate').value == "" || document.getElementById('xCoordinate').value > 9 ) {
+      alert('Please, insert a number between 0 and 9 in the X Coordinate.');
+      console.log('X Coordinate invalid');
+      document.getElementById("map").innerHTML = "";
+    } else if (document.getElementById('yCoordinate').value == "" || document.getElementById('yCoordinate').value > 5 ) {
+        alert('Please, insert a number between 0 and 5 in the Y Coordinate.');
+        console.log('Y Coordinate Invalid');
+        document.getElementById("map").innerHTML = "";
+    } else {
+      document.getElementById("game").innerHTML = "";
+      document.getElementById("game").innerHTML = '<div id="map"></div>';
+      let g = new Game(10, 6);
+      g.render();
+    }
+  });
+}
+
+/*
 function game() {
   //Defino el tablero
   var tablero = [
@@ -99,4 +260,4 @@ function game() {
     }
   });
   }
-}
+}*/
