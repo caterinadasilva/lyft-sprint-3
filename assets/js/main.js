@@ -127,7 +127,6 @@ function game() {
       }
     }
   }
-  document.getElementById("map").innerHTML = "";
   document.getElementById("startBtn").addEventListener("click", function(){
     event.preventDefault();
     var xCoordinate = parseInt(document.getElementById('xCoordinate').value);
@@ -137,11 +136,9 @@ function game() {
     if (document.getElementById('xCoordinate').value == "" || document.getElementById('xCoordinate').value > 9 ) {
       alert('Please, insert a number between 0 and 9 in the X Coordinate.');
       console.log('X Coordinate invalid');
-      document.getElementById("map").innerHTML = "";
     } else if (document.getElementById('yCoordinate').value == "" || document.getElementById('yCoordinate').value > 5 ) {
         alert('Please, insert a number between 0 and 5 in the Y Coordinate.');
         console.log('Y Coordinate Invalid');
-        document.getElementById("map").innerHTML = "";
     } else {
       document.getElementById("game").innerHTML = "";
       document.getElementById("game").innerHTML = '<div id="map"></div>';
