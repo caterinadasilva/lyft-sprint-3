@@ -130,8 +130,8 @@ function game() {
   document.getElementById("map").innerHTML = "";
   document.getElementById("startBtn").addEventListener("click", function(){
     event.preventDefault();
-    var xCoordinate = document.getElementById('xCoordinate').value;
-    var yCoordinate = document.getElementById('yCoordinate').value;
+    var xCoordinate = parseInt(document.getElementById('xCoordinate').value);
+    var yCoordinate = parseInt(document.getElementById('yCoordinate').value);
     console.log('X Coordinate: ' + xCoordinate);
     console.log('Y Coordinate: ' + yCoordinate);
     if (document.getElementById('xCoordinate').value == "" || document.getElementById('xCoordinate').value > 9 ) {
