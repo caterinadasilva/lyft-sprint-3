@@ -13,15 +13,12 @@ function validateForm() {
 // Código de Ricardo Silva
 
 function game() {
-  document.getElementById("startBtn").addEventListener("click", function(){
-    event.preventDefault();
-    class Robot {
-    constructor (board_size_x, board_size_y) {
-      this.position_x = 0;
-      this.position_y = 0;
+  class Robot {
+    constructor (position_x, position_y, board_size_x, board_size_y) {
+      this.position_x = position_x;
+      this.position_y = position_y;
       this.board_size_x = board_size_x;
       this.board_size_y = board_size_y
-      
       this.bread_crumb = [];
       this.saveBreadCrumb();
     }
@@ -86,71 +83,55 @@ function game() {
       let dom_element = document.getElementById('map');
       for (let y = 0; y < this.model.length; y++) {
           let line = this.model[y];
-          html_builder.push("<div class='clearfix line' >");
+          html_builder.push("<div class='clearfix line'>");
           for (let x = 0; x < line.length; x++) {
-            html_builder.push("<div class='cell' ></div>");
+            html_builder.push("<div class='cell'></div>");
         }
         html_builder.push("</div>");
       }
       dom_element.innerHTML = html_builder.join('');
     }
   }
-    // solution
-    // 6.2
-    let r = new Robot(10, 10);
-    r.moveRight();
-    r.moveDown();
-    r.moveRight();
-    r.moveDown();
-    r.debugPosition();
-
-    // quiz
-    let board = new Board(10, 10);
-    let robot = new Robot(10, 10);
-    robot.moveRight();
-    robot.moveDown();
-    robot.moveRight();
-    robot.moveDown();
-    board.render();
-    robot.render();
-    robot.renderBreadCrumb();
-
-    // bonus
-    class Game {
-      constructor(board_size_x, board_size_y) {
-        this.board = new Board(board_size_x, board_size_y);
-        this.robot = new Robot(board_size_x, board_size_y);
-        this.initControllers();
-      }
-      render() {
-        this.board.render();
-        this.robot.render();
-        this.robot.renderBreadCrumb();
-      }
-      initControllers() {
-        let map = document.getElementById("map");
-        window.onkeydown = (e) => {
-          switch (e.code) {
-            case "ArrowDown":
-                this.robot.moveDown();
-              break;
-            case "ArrowUp":
-                this.robot.moveUp();
-              break;
-            case "ArrowLeft":
-                this.robot.moveLeft();
-              break;
-            case "ArrowRight":
-                this.robot.moveRight();
-                 break;
-            default:
-                return true;
-          }
-          this.render();
-          return false;
+  class Game {
+    constructor(position_x, position_y, board_size_x, board_size_y) {
+      this.board = new Board(board_size_x, board_size_y);
+      this.robot = new Robot(position_x, position_y, board_size_x, board_size_y);
+      this.initControllers();
+    }
+    render() {
+      this.board.render();
+      this.robot.render();
+      this.robot.renderBreadCrumb();
+    }
+    initControllers() {
+      let map = document.getElementById("map");
+      window.onkeydown = (e) => {
+        switch (e.code) {
+          case "ArrowDown":
+              this.robot.moveDown();
+            break;
+          case "ArrowUp":
+              this.robot.moveUp();
+            break;
+          case "ArrowLeft":
+              this.robot.moveLeft();
+            break;
+          case "ArrowRight":
+              this.robot.moveRight();
+               break;
+          default:
+              return true;
         }
+        this.render();
+        return false;
       }
     }
+  }
+  document.getElementById("map").innerHTML = "";
+  document.getElementById("startBtn").addEventListener("click", function(){
+    event.preventDefault();
+    var xCoordinate = document.getElementById('xCoordinate').value;
+    var yCoordinate = document.getElementById('yCoordinate').value;
     console.log('X Coordinate: ' + xCoordinate);
     console.log('Y Coordinate: ' + yCoordinate);
     if (document.getElementById('xCoordinate').value == "" || document.getElementById('xCoordinate').value > 9 ) {
@@ -164,7 +145,7 @@ function game() {
     } else {
       document.getElementById("game").innerHTML = "";
       document.getElementById("game").innerHTML = '<div id="map"></div>';
-      let g = new Game(10, 6);
+      let g = new Game(xCoordinate, yCoordinate, 10, 6);
       g.render();
     }
   });
